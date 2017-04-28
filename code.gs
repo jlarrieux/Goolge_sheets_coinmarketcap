@@ -10,7 +10,6 @@ function onOpen(){
 
 
 //This function actually runs the update
-
 function runUpdate(){
   var profitability = SpreadsheetApp.getActive().getSheetByName('Coins'); //looks for a sheet call 'Coins'
   profitability.activate(); //activate the sheet called 'Coins'
@@ -20,6 +19,7 @@ function runUpdate(){
 }
 
 
+//this function iterate through the symbol of coins/tokens you want price for a fetch it
  function updatePrices(cell2, profitability){
   row = cell2.getRow();
   col = cell2.getColumn();
@@ -39,7 +39,7 @@ function runUpdate(){
  
 
 
-
+//the API url gets created here 
 function fetchFromCoinMarketCap(row, column){
   var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
@@ -52,7 +52,7 @@ function fetchFromCoinMarketCap(row, column){
  
 }
 
-
+//the actual API call that returns the json object
 function fetch(url){
   var text = UrlFetchApp.fetch(url).getContentText();
   return JSON.parse(text);
