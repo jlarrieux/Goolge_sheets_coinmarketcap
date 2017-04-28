@@ -7,6 +7,7 @@ Steps:
 1-Open Google Sheets
 
 
-
 2-Go to "tools->scrip editor"
+
+
 3-Copy and paste the code (be sure to change the variables as per the instructions)
