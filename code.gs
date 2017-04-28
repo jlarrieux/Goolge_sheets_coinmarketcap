@@ -13,7 +13,7 @@ function onOpen(){
 function runUpdate(){
   var profitability = SpreadsheetApp.getActive().getSheetByName('Coins'); //looks for a sheet call 'Coins'
   profitability.activate(); //activate the sheet called 'Coins'
-  var cell = profitability.getRange("c3"); //set the sell where the first price will appear
+  var cell = profitability.getRange("c3"); //set the sell where the first price will appear, at cell c2, you need to have the coinmarketcap symbol for the coin you want price for
   updatePrices(cell, profitability);
   
 }
@@ -25,7 +25,7 @@ function runUpdate(){
   col = cell2.getColumn();
   cell2.activate();
   var num =1;
-  while(num!=0){    
+  while(num!=0){    // this will iterate from cell2 (in our case c3, see above), and look at the cell to the left (c2) for the symbol and fetch the price, put it in c3 and move to c4.. until the cell on the left is blank
     symbol = profitability.getRange(row, col-1).getValue();
     if(symbol.length>0) fetchFromCoinMarketCap(cell2.getRow(), cell2.getColumn()-1);
     else{
