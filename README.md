@@ -2,6 +2,8 @@
 Simple script to pull prices of specific coins into your Google sheets.
 
 Steps:
+
+
 1-Open Google Sheets
 
 
