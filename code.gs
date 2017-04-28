@@ -25,8 +25,7 @@ function runUpdate(){
   col = cell2.getColumn();
   cell2.activate();
   var num =1;
-  while(num!=0){
-    cell2 =  profitability.getRange(row, col);
+  while(num!=0){    
     symbol = profitability.getRange(row, col-1).getValue();
     if(symbol.length>0) fetchFromCoinMarketCap(cell2.getRow(), cell2.getColumn()-1);
     else{
