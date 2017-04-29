@@ -26,8 +26,9 @@ function runUpdate(){
   cell2.activate();
   var num =1;
   while(num!=0){    // this will iterate from cell2 (in our case c3, see above), and look at the cell to the left (c2) for the symbol and fetch the price, put it in c3 and move to c4.. until the cell on the left is blank
+    var currentCell = profitability.getRange(row, col)
     symbol = profitability.getRange(row, col-1).getValue();
-    if(symbol.length>0) fetchFromCoinMarketCap(cell2.getRow(), cell2.getColumn()-1);
+    if(symbol.length>0) fetchFromCoinMarketCap(currentCell.getRow(), currentCell.getColumn()-1);
     else{
       num=0;
       break;
